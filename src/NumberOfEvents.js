@@ -21,7 +21,7 @@ render () {
           value={this.state.numberOfEvents}
           onChange={this.handleInputChanged}
         />
-     </div>
+       </div>
     )
   }
  }
