@@ -2,8 +2,6 @@ import React from 'react';
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import { mount, shallow } from 'enzyme';
 import App from '../App';
-import Event from '../Event';
-import EventList from '../EventList';
 import NumberOfEvents from '../NumberOfEvents';
 
 const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
