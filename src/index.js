@@ -12,5 +12,5 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // Learn more about service workers: https://bit.ly/CRA-PWA
 // serviceWorker.unregister();
 atatus.config('c02ab86e9dad490f83ff14b1b22880b2').install();
-// atatus.notify(new Error('Test Atatus Setup'));
+atatus.notify(new Error('Test Atatus Setup'));
 
