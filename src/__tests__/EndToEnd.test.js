@@ -6,11 +6,13 @@ describe("show/hide an event details", () => {
   jest.setTimeout(30000);
 
   beforeAll(async () => {
-    browser = await puppeteer.launch({
-      headless: true,
+  browser = await puppeteer.launch({ 
+      //executablePath: '/usr/bin/google-chrome',
+      headless: false,
       slowMo: 250,
-      ignoreDefaultArgs: ["--disable-extensions"],
+      ignoreDefaultArgs: ['--disable-extensions']
     });
+
 
     page = await browser.newPage();
     await page.goto("http://localhost:3000/");
