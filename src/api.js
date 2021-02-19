@@ -34,7 +34,7 @@ export const getEvents = async () => {
     return mockData;
   }
 
-  const token = await getAccessToken();
+    const token = await getAccessToken();
 
   if (token) {
     removeQuery();
@@ -42,13 +42,24 @@ export const getEvents = async () => {
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
-      localStorage.setItem("lastEvents", JSON.stringify(result.data));
-      localStorage.setItem("locations", JSON.stringify(locations));
+      localStorage.setItem('lastEvents', JSON.stringify(result.data));
+      localStorage.setItem('locations', JSON.stringify(locations));
     }
     NProgress.done();
     return result.data.events;
   }
 };
+
+// Register the service worker if available.
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
+  }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+  });
+}
+
+
 
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem("access_token");

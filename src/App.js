@@ -40,6 +40,12 @@ class App extends Component {
           locations: extractLocations(events),
         });
       }
+
+      if (!navigator.onLine) {
+        this.setState({
+          infoAlert: 'This page is currently offline.  Please try again later.'
+        });
+      }
     });
   }
 
