@@ -4,6 +4,7 @@ import EventList from "./EventList";
 import NumberOfEvents from "./NumberOfEvents";
 import CitySearch from "./CitySearch";
 import { getEvents, extractLocations } from "./api";
+import { InfoAlert } from './Alert';
 import "./nprogress.css";
 
 class App extends Component {
@@ -11,9 +12,9 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
-    currentLocation: "all",
+    currentLocation: 'all',
     infoAlert: ''
-  };
+  }
 
   updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
@@ -57,6 +58,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <InfoAlert text={this.state.infoAlert} />
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
@@ -67,7 +69,7 @@ class App extends Component {
           updateEvents={this.updateEvents}
           currentLocation={this.state.currentLocation}
         />
-        <div><InfoAlert text={this.state.infoAlert} /> </div>
+      
       </div>
     );
   }
