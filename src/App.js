@@ -67,7 +67,7 @@ class App extends Component {
           updateEvents={this.updateEvents}
           currentLocation={this.state.currentLocation}
         />
-        <InfoAlert text={this.state.infoAlert} />
+        <div><InfoAlert text={this.state.infoAlert} /> </div>
       </div>
     );
   }
