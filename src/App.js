@@ -12,6 +12,7 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     currentLocation: "all",
+    infoAlert: ''
   };
 
   updateEvents = (location, eventCount) => {
@@ -66,6 +67,7 @@ class App extends Component {
           updateEvents={this.updateEvents}
           currentLocation={this.state.currentLocation}
         />
+        <InfoAlert text={this.state.infoAlert} />
       </div>
     );
   }
