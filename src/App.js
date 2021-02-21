@@ -3,6 +3,7 @@ import "./App.css";
 import EventList from "./EventList";
 import NumberOfEvents from "./NumberOfEvents";
 import CitySearch from "./CitySearch";
+import EventGenre from './EventGenre';
 import { getEvents, extractLocations } from "./api";
 import { InfoAlert } from "./Alert";
 import {
@@ -94,8 +95,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Meet App</h1>
-        <h4>Choose your nearest city</h4>
-        <InfoAlert text={this.state.infoAlert} />
+        <h4>Choose your nearest city</h4>        
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
@@ -107,7 +107,8 @@ class App extends Component {
           currentLocation={this.state.currentLocation}
         />
 
-        <h4>Events in each city</h4>
+        <div className='data-vis-wrapper'>
+        <EventGenre events={events} />
         <ResponsiveContainer height={400} >
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
             <CartesianGrid />
@@ -122,6 +123,8 @@ class App extends Component {
             <Scatter data={this.getData()} fill="#8884d8" />
           </ScatterChart>
         </ResponsiveContainer>
+        </div>
+        <InfoAlert text={this.state.infoAlert} />
         <EventList events={this.state.events} />        
       </div>
     );
