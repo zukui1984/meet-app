@@ -7,13 +7,9 @@ class Event extends Component {
 
   handleButtonClick = () => {
     if (this.state.showDetails === false) {
-      this.setState({
-        showDetails: true,
-      });
+      this.setState({showDetails: true });
     } else {
-      this.setState({
-        showDetails: false,
-      });
+      this.setState({showDetails: false});
     }
   };
 

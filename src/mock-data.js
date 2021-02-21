@@ -12,7 +12,7 @@ const mockData = [
     "location": "Berlin, Germany",
     "creator": {
      "email": "fullstackwebdev@careerfoundry.com",
-     "self": true
+     "self": true,
     },
     "organizer": {
      "email": "fullstackwebdev@careerfoundry.com",
